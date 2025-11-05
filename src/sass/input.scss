@@ -1,0 +1,29 @@
+body {
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+
+  .titleName {
+    color: purple;
+    text-align: center;
+  }
+}
+.nav {
+  color: red;
+
+  &__list {
+    color: aquamarine;
+  }
+
+  &__item {
+    color: blue;
+  }
+
+  &__link {
+    color: purple;
+
+    &--active {
+      background-color: bisque;
+    }
+  }
+}
