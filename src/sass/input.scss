@@ -1,13 +1,50 @@
-body {
-  justify-content: center;
-  align-items: center;
-  background-color: aquamarine;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .titleName {
+body {
+  background-color: aquamarine;
+}
+
+.orqHome {
+  display: flex;
+  border: solid red;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 60vh;
+
+  .orqHome__title {
     color: purple;
     text-align: center;
   }
+
+  .orqHome__components {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15%;
+  }
 }
+
+.orqAddTask {
+  width: 80vw;
+  .orqAddTask__form {
+    border: solid brown;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.orqCardTask {
+  display: flex;
+  justify-content: space-around;
+  border: solid blue;
+}
+
 .nav {
   color: red;
 
