@@ -1,7 +1,7 @@
 // import axios from "axios";
 import type IOrqTodo from "../models/interface";
 
-const LOCAL_STORAGE_KEY = "data";
+export const LOCAL_STORAGE_KEY = "data";
 
 export const data: IOrqTodo[] = [
   {
@@ -20,3 +20,19 @@ export const data: IOrqTodo[] = [
     concluded: false,
   },
 ];
+
+export function getStorageValue(key: string, defaultValue: string) {
+  if (typeof window !== "undefined") {
+    const saved = localStorage.getItem(key);
+    const initial = saved !== null ? JSON.parse(saved) : defaultValue;
+    return initial;
+  }
+}
+
+export function setItem(key: string, value: IOrqTodo) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.log(error);
+  }
+}
