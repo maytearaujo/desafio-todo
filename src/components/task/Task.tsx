@@ -1,4 +1,4 @@
-import "../../sass/input.scss";
+import "../../styles/output.css";
 // import type IOrqTask from "../../models/interface";
 
 // interface IOrqCardTaskProps {

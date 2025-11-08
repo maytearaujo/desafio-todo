@@ -1,5 +1,5 @@
 import { useLocalStorage } from "../../hooks/usePersistedState";
-import "../../sass/input.scss"
+import "../../styles/output.css"
 import { LOCAL_STORAGE_KEY } from "../../services/Service";
 const OrqCreate
 = () => {

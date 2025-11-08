@@ -1,7 +1,7 @@
 import OrqCreate from "../../components/task/CreateTask";
 import OrqListTask from "../../components/task/ListTask";
 import OrqSearchTask from "../../components/task/SearchTask";
-import "../../sass/input.scss";
+import "../../styles/output.css";
 
 const OrqHome = () => {
   return (
