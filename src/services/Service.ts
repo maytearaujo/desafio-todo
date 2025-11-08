@@ -1,7 +1,9 @@
 // import axios from "axios";
-import type IOrqTask from "../models/interface";
+import type IOrqTodo from "../models/interface";
 
-export const data: IOrqTask[] = [
+const LOCAL_STORAGE_KEY = "data";
+
+export const data: IOrqTodo[] = [
   {
     id: 1,
     title: "Fazer almoço",

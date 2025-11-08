@@ -1,13 +1,30 @@
-const AddTask = () => {
+import { useLocalStorage } from "../../hooks/usePersistedState";
+
+const OrqAddTask = () => {
+  const [title, setTitle] = useLocalStorage("data", "");
+  const [concluded, setConcluded] = useLocalStorage("data", "concluded: false");
+
   return (
     <div>
-      <label htmlFor="tarefa">Tarefa</label>
-      <input type="text" name="" id="tarefa" />
-      <label htmlFor="concluded">Concluida</label>
-      <input type="checkbox" name="" id="concluded" />
-      <button>Cadastrar</button>
+      <form>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Tarefa"
+        />
+        <label>
+          <input
+            type="checkbox"
+            checked={concluded}
+            onChange={(e) => setConcluded(e.target.checked)}
+          />{" "}
+          Tarefa Concluída?
+        </label>
+        <input type="submit" value="Submit"></input>
+      </form>
     </div>
   );
 };
 
-export default AddTask;
+export default OrqAddTask;

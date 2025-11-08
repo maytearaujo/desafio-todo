@@ -1,5 +1,5 @@
-export default interface IOrqTask {
-  id: number | string;
+export default interface IOrqTodo {
+  id: number;
   title: string;
-  concluded: boolean | string;
+  concluded: boolean;
 }
