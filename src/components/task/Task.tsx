@@ -1,30 +1,30 @@
 import { useLocalStorage } from "../../hooks/usePersistedState";
-
-const OrqAddTask = () => {
+import "../../sass/input.scss"
+const OrqTask = () => {
   const [title, setTitle] = useLocalStorage("data", "");
   const [concluded, setConcluded] = useLocalStorage("data", "concluded: false");
 
   return (
     <div>
-      <form>
-        <input
+      <form className="orqFormTask">
+        <input className="orqFormTask__input"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Tarefa"
         />
-        <label>
-          <input
+        <label className="orqFormTask__label">
+          <input className="orqFormTask__checkbox"
             type="checkbox"
             checked={concluded}
             onChange={(e) => setConcluded(e.target.checked)}
           />{" "}
           Tarefa Concluída?
         </label>
-        <input type="submit" value="Submit"></input>
+        <button className="orqformTask__button" type="submit">Adicionar</button>
       </form>
     </div>
   );
 };
 
-export default OrqAddTask;
+export default OrqTask;
