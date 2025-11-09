@@ -6,6 +6,8 @@
 
 body {
   background-color: #1c1a1a;
+  color: #f8f2f2;
+  font-size: 2rem;
 }
 
 .orqMain {
@@ -50,7 +52,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80%;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -138,20 +141,32 @@ body {
   }
 }
 
-.orqListTask {
+.orq-listTask {
+  color: antiquewhite;
+  text-align: center;  
+  
+}
+
+.orqTask {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100vw;
 
-  .orqListTask__label {
+  .orqTask__ul {
     font-size: 18px;
     color: #fff;
     display: flex;
     align-items: center;
+
+    .orqTask__ul__li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
-  .orqListTask__button {
+  .orqTask__button {
     position: relative;
     font-size: 17px;
     text-transform: uppercase;
