@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { data, getStorageValue } from "../services/Service";
+import { data, getStorageValue } from "../services/Services";
 
-export const useLocalStorage = (key: string, defaultValue: string) => {
+export const useLocalStorage = (key: string, defaultValue: any) => {
   const [value, setValue] = useState(() => {
     return getStorageValue(key, defaultValue);
   });

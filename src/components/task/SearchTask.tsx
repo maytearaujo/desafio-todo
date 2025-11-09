@@ -1,8 +1,11 @@
-import { useLocalStorage } from '../../hooks/usePersistedState';
-import { LOCAL_STORAGE_KEY } from '../../services/Service';
+// import { useLocalStorage } from '../../hooks/usePersistedState';
+// import { LOCAL_STORAGE_KEY } from '../../services/Services';
+
+import { useState } from "react";
 
 const OrqSearchTask = () => {
-    const [title, setTitle] = useLocalStorage(LOCAL_STORAGE_KEY, "");
+    // const [title, setTitle] = useLocalStorage(LOCAL_STORAGE_KEY, "");
+    const [title, setTitle] = useState("");
     return (
         <div>
             <form className="orqSearch">
