@@ -1,33 +1,29 @@
 import type IOrqTodo from "../../models/interface";
 import "../../styles/output.css";
+import { useTodos } from "../../contexts/TodoContext";
 
 interface IOrqTodoProps {
-  tasks: IOrqTodo;
+  task: IOrqTodo;
 }
 
-const OrqTask = ({ tasks }: IOrqTodoProps) => {
+const OrqTask = ({ task }: IOrqTodoProps) => {
+  const { toggleTodo, deleteTask } = useTodos();
 
   return (
-    <div className="orqTask">
-      {/* <label className="orqTask__ul">Título: {tasks.title}</label> */}
-      {/* <label className="orqTask__ul">Situação: {tasks.concluded ? "Concluída" : "Pendente"}</label> */}
-      <ul className="orqTask__ul">
-        <li>
-          <div className="orqTask__ul__li">
-            {tasks.title}
-          </div>
-          <div className="orqTask__ul__li">
-            {tasks.concluded ? "Concluída" : "Pendente"}
-          </div>
-          <div className="orqTask__ul__li">
-            <button className="orqTask__button">Editar</button>
-          </div>
-          <div className="orqTask__ul__li">
-            <button className="orqTask__button">Atualizar</button>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <form className="orqTask">
+      <input type="checkbox" checked={task.concluded} className="orqTask__checkbox" onChange={() => toggleTodo(task.id)} />
+      <label className={`orqTask__label ${task.concluded ? 'orqTask__label--checked' : ''}`}>
+        {task.title}
+      </label>
+      <button 
+        type="button" 
+        className="orqTask__button" 
+        onClick={() => deleteTask(task.id)}
+      >
+        Apagar
+      </button>
+    </form>
+
   );
 };
 

@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #1c1a1a;
-  color: #f8f2f2;
-  font-size: 2rem;
-}
+// body {
+//   background-color: #1c1a1a;
+//   color: #f8f2f2;
+//   font-size: 2rem;
+// }
 
 .orqMain {
   // max-width: 960px;
@@ -42,7 +42,7 @@ body {
   margin: 10px 0px;
 
   .orqHome__title {
-    color: #fff;
+    // color: #fff;
     font-size: 38px;
     font-family: "Montserrat";
     font-weight: 400;
@@ -60,7 +60,7 @@ body {
 .orqSearch {
   display: flex;
   justify-content: space-around;
-  align-items:normal;
+  align-items: normal;
   gap: 20px;
   width: 100%;
   // border: solid red;
@@ -69,7 +69,7 @@ body {
     width: 80%;
     padding: 12px 16px;
     border-radius: 8px;
-    color: #fff;
+    // color: #fff;
     font-family: inherit;
     background-color: transparent;
     border: 1px solid #414141;
@@ -88,7 +88,7 @@ body {
     font-family: inherit;
     font-weight: 500;
     color: black;
-    background-color: white;
+    // background-color: white;
     width: 150px;
     height: 30px;
   }
@@ -104,7 +104,7 @@ body {
     width: 50%;
     padding: 12px 16px;
     border-radius: 8px;
-    color: #fff;
+    // color: #fff;
     font-family: inherit;
     background-color: transparent;
     border: 1px solid #414141;
@@ -113,7 +113,7 @@ body {
   .orqFormTask__label {
     display: block;
     margin-bottom: 5px;
-    color: #f8f2f2;
+    // color: #f8f2f2;
     font-weight: 600;
     font-size: 12px;
   }
@@ -132,19 +132,15 @@ body {
     font-family: inherit;
     font-weight: 500;
     color: black;
-    background-color: white;
+    // background-color: white;
     width: 150px;
     height: 30px;
-  }
-
-  .orqFormTask__checkbox {
   }
 }
 
 .orq-listTask {
-  color: antiquewhite;
-  text-align: center;  
-  
+  // color: antiquewhite;
+  text-align: center;
 }
 
 .orqTask {
@@ -153,17 +149,12 @@ body {
   align-items: center;
   width: 100vw;
 
-  .orqTask__ul {
-    font-size: 18px;
-    color: #fff;
-    display: flex;
-    align-items: center;
+  .orqTask__label {
+    // color:
+  }
 
-    .orqTask__ul__li {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  .orqTask__label--checked {
+    color: blue;
   }
 
   .orqTask__button {
@@ -180,7 +171,7 @@ body {
     font-family: inherit;
     font-weight: 500;
     color: black;
-    background-color: white;
+    // background-color: white;
     width: 150px;
     height: 30px;
   }

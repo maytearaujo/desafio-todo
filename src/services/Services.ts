@@ -1,4 +1,3 @@
-// import axios from "axios";
 import type IOrqTodo from "../models/interface";
 
 export const LOCAL_STORAGE_KEY = "data";
@@ -29,7 +28,7 @@ export function getStorageValue(key: string, defaultValue: string) {
   }
 }
 
-export function setItem(key: string, value: IOrqTodo) {
+export function setItem(key: string, value: IOrqTodo | IOrqTodo[]) {
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {

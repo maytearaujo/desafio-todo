@@ -1,31 +1,18 @@
-import type IOrqTodo from "../../models/interface";
 import "../../styles/output.css"
-import { useEffect, useState } from "react";
-import { useLocalStorage } from "../../hooks/usePersistedState";
-import { data, LOCAL_STORAGE_KEY, setItem } from "../../services/Services";
+import { useState } from "react";
+import { useTodos } from "../../contexts/TodoContext";
 const OrqCreateTask = () => {
   const [inputText, setInputText] = useState("");
   const [check, setCheck] = useState(false);
-  const [task, setTask] = useLocalStorage(LOCAL_STORAGE_KEY, data);
+  const { addTodo } = useTodos();
 
-  useEffect(() => {
-    setItem(LOCAL_STORAGE_KEY, task);
-  }, [task]);
-
-  const addTask = (e: any) => {
+  const addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const text = inputText.trim();
     if (text.length === 0) return;
 
-    setTask((prevState: IOrqTodo[]) => [
-      ...prevState,
-      {
-        id: prevState.length + 1,
-        title: text,
-        concluded: check
-      },
-    ]);
+    addTodo(text, check);
 
     setInputText("");
     setCheck(false);
@@ -56,4 +43,3 @@ const OrqCreateTask = () => {
 };
 
 export default OrqCreateTask
-
