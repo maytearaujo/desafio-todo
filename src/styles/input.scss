@@ -141,6 +141,7 @@
 .orq-listTask {
   // color: antiquewhite;
   text-align: center;
+
 }
 
 .orqTask {
@@ -174,5 +175,13 @@
     // background-color: white;
     width: 150px;
     height: 30px;
+  }
+}
+
+.orq-table-task{
+  color: black;
+  .orq-table-task-concluded{
+    text-decoration: line-through;
+    color: gray;
   }
 }
