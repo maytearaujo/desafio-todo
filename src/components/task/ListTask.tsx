@@ -5,30 +5,30 @@ const OrqListTask = () => {
   const { tasksFiltered, toggleTaskConcluded, removeTask } = useTodos();
 
   return (
-    <table className="orq-table-task">
-      <thead>
-        <tr>
-          <th>Tarefa</th>
-          <th>Status</th>
-          <th>Excluir</th>
+    <table className="orq-list-task">
+      <thead className="orq-list-task__header">
+        <tr className="orq-list-task__header__row">
+          <th className="orq-list-task__header__row__cell">Tarefa</th>
+          <th className="orq-list-task__header__row__cell">Status</th>
+          <th className="orq-list-task__header__row__cell">Excluir</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="orq-list-task__body">
         {tasksFiltered.map((task) => (
-          <tr key={task.id}>
+          <tr className="orq-list-task__row" key={task.id}>
             <td
-              className={task.concluded ? "orq-table-task-concluded" : "orq-table-task"}
+              className={`orq-list-task__header__row__cell ${task.concluded ? "orq-list-task__header__row__cell--concluded" : ""}`}
             >
               {task.title}
             </td>
-            <td>
+            <td className="orq-list-task__header__row__cell--center">
               <input
                 type="checkbox"
                 checked={task.concluded}
                 onChange={() => toggleTaskConcluded(task.id)}
               />
             </td>
-            <td>
+            <td className="orq-list-task__header__row__cell--center">
               <button
                 type="button"
                 onClick={() => removeTask(task.id)}

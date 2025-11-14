@@ -1,7 +1,7 @@
 const OrqHeader = () => {
   return (
-    <div className="orqHeader">
-      <h1 className="orqHeader__noteTitle">To Do List</h1>
+    <div className="orq-header">
+      <h1 className="orq-header__title">Lista de Tarefas</h1>
     </div>
   );
 };
