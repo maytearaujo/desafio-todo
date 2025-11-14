@@ -1,24 +1,24 @@
-import OrqTask from './Task'
-import { useTodos } from '../../contexts/TodoContext';
+// import OrqTask from './Task'
+// import { useTodos } from '../../contexts/TodoContext';
 
-const OrqListTask = () => {
-    const { todos } = useTodos();
+// const OrqListTask = () => {
+//     const { todos } = useTodos();
 
-    return (
-        <div className='orq-listTask'>
-            {todos && todos.length > 0 ? (
-                todos.map((task) => (
-                    <OrqTask
-                        key={task.id}
-                        task={task}
-                    />
-                ))
-            ) : (
-                <p>Nenhuma tarefa cadastrada</p>
-            )}
+//     return (
+//         <div className='orq-listTask'>
+//             {todos && todos.length > 0 ? (
+//                 todos.map((task) => (
+//                     <OrqTask
+//                         key={task.id}
+//                         task={task}
+//                     />
+//                 ))
+//             ) : (
+//                 <p>Nenhuma tarefa cadastrada</p>
+//             )}
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default OrqListTask
+// export default OrqListTask

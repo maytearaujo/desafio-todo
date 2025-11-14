@@ -1,45 +1,54 @@
-import "../../styles/output.css"
+import useTodos from "../../hooks/useTodos";
+import "../../styles/output.css";
 import { useState } from "react";
-import { useTodos } from "../../contexts/TodoContext";
-const OrqCreateTask = () => {
-  const [inputText, setInputText] = useState("");
-  const [check, setCheck] = useState(false);
-  const { addTodo } = useTodos();
 
-  const addTask = (e: React.FormEvent<HTMLFormElement>) => {
+const OrqCreateTask = () => {
+  const [title, setTitle] = useState<string>("");
+  const [concluded, setConcluded] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
+  const { createTask } = useTodos();
+
+  const handleCreateTaskSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const text = inputText.trim();
-    if (text.length === 0) return;
-
-    addTodo(text, check);
-
-    setInputText("");
-    setCheck(false);
+    if (title.trim().length !== 0) {
+      createTask(title, concluded);
+      setTitle("");
+      setConcluded(false);
+      setShowError(false);
+    } else {
+      setShowError(true);
+    }
   };
 
   return (
     <div>
-      <form className="orqFormTask" onSubmit={addTask}>
-        <input className="orqFormTask__input"
+      <form onSubmit={handleCreateTaskSubmit} className="orq-form-create-task" >
+        <label className="orq-form-create-task__label">Tarefa </label>
+        <input
           type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="Tarefa"
+          className="orq-form-create-task__input"
+          // value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Informe a tarefa"
         />
-        <label className="orqFormTask__label">
-          <input className="orqFormTask__checkbox"
-            type="checkbox"
-            checked={check}
-            onChange={(e) => setCheck(e.target.checked)}
-          />
-          Tarefa Concluída?
-        </label>
-        <button className="orqformTask__button" type="submit">Adicionar</button>
+        <label className="orq-form-create-task__label">Concluída? </label>
+        <input
+          type="checkbox"
+          name="concluded"
+          className="orq-form-create-task__checkbox"
+          checked={concluded}
+          onChange={(e) => setConcluded(e.target.checked)}
+        />
 
+        {showError && <span style={{ color: "red" }}>Informe a tarefa</span>}
+
+        <button className="orq-form-create-task__button" type="submit">
+          Adicionar
+        </button>
       </form>
     </div>
   );
 };
 
-export default OrqCreateTask
+export default OrqCreateTask;

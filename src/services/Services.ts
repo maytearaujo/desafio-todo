@@ -1,8 +1,8 @@
-import type IOrqTodo from "../models/interface";
+import type IOrqTask from "../models/interfaces";
 
 export const LOCAL_STORAGE_KEY = "data";
 
-export const data: IOrqTodo[] = [
+export const data: IOrqTask[] = [
   {
     id: 1,
     title: "Fazer almoço",
@@ -20,27 +20,19 @@ export const data: IOrqTodo[] = [
   },
 ];
 
-export function getStorageValue(key: string, defaultValue: string) {
+export function getStorageValue<T>(key: string, defaultValue: T): T {
   if (typeof window !== "undefined") {
     const saved = localStorage.getItem(key);
-    const initial = saved !== null ? JSON.parse(saved) : defaultValue;
-    return initial;
+    if (saved !== null){
+      try {
+        return JSON.parse(saved)
+      } catch (error) {
+        console.error("Erro ao cadstrar valor no localStorage", 
+          error
+        );
+        return defaultValue;
+      }
+    }
   }
-}
-
-export function setItem(key: string, value: IOrqTodo | IOrqTodo[]) {
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    console.log("Erro ao salvar no localstorage", error);
-  }
-}
-
-export function getItem(key: string) {
-  try {
-    const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : undefined;
-  } catch (error) {
-    console.log("Erro ao recuperar dados do localstorage", error);
-  }
+  return defaultValue;
 }

@@ -1,4 +1,4 @@
-import type IOrqTask from "../models/interface";
+import type IOrqTask from "../models/interfaces";
 
 // export function setItem(key: string, value: IOrqTask) {
 //   try {
