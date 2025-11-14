@@ -28,7 +28,7 @@ const OrqCreateTask = () => {
         <input
           type="text"
           className="orq-form-create-task__input"
-          // value={title}
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Informe a tarefa"
         />
