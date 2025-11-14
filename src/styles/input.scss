@@ -21,15 +21,16 @@ body {
   color: $font-color;
 }
 
-.orq-home{
+.orq-home {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   width: 100%;
   margin-top: 1rem;
+  padding: 2rem;
 
-  &__components{
+  &__components {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -48,37 +49,49 @@ body {
   }
 }
 
-.orq-form-create-task {
-  display: flex;
+.orq-create-task {
+
+  &__form-components {
+    display: flex;
+    width: 100%;
+    align-items: center;
+      display: flex;
   width: 100%;
   gap: 0.5rem;
   align-items: center;
+  flex-direction: row;
 
-  &__label {
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
-  }
-
-  &__input {
-    padding: 0.5rem;
-    border: 1px solid $font-color;
-    border-radius: 4px;
-    width: 300px;
-    margin-right: 0.5rem;
-    width: 100%;
-  }
-
-  &__button {
-    padding: 0.5rem 1rem;
-    background-color: $primary-color;
-    color: $primary-text-color;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
+    &__label {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
     }
+
+    &__input {
+      padding: 0.5rem;
+      border: 1px solid $font-color;
+      border-radius: 4px;
+      width: 300px;
+      margin-right: 0.5rem;
+      width: 100%;
+    }
+
+    &__button {
+      padding: 0.5rem 1rem;
+      background-color: $primary-color;
+      color: $primary-text-color;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  &__span {
+    display: flex;
+    width: 100%;
   }
 }
 
@@ -100,7 +113,7 @@ body {
 }
 
 
-.orq-list-task{
+.orq-list-task {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
@@ -109,6 +122,7 @@ body {
     background-color: $primary-color;
     color: $primary-text-color;
   }
+
   &__header__row__cell {
     padding: 0.5rem;
     text-align: left;
@@ -122,11 +136,13 @@ body {
       color: $concluded-text-color;
     }
   }
+
   .orq-list-task__body {
     tr {
       text-align: left;
     }
   }
+
   &-concluded {
     text-decoration: line-through;
     color: $concluded-text-color;
