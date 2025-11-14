@@ -21,29 +21,32 @@ const OrqCreateTask = () => {
   };
 
   return (
-    <form onSubmit={handleCreateTaskSubmit} className="orq-form-create-task">
-      <label className="orq-form-create-task__label">Tarefa </label>
-      <input
-        type="text"
-        className="orq-form-create-task__input"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Informe a tarefa"
-      />
-      <label className="orq-form-create-task__label">Concluída? </label>
-      <input
-        type="checkbox"
-        name="concluded"
-        className="orq-form-create-task__checkbox"
-        checked={concluded}
-        onChange={(e) => setConcluded(e.target.checked)}
-      />
+    <form onSubmit={handleCreateTaskSubmit} className="orq-create-task">
+      <div className="orq-create-task__form-components">
+        <label className="orq-create-task__form-components__label">Tarefa </label>
+        <input
+          type="text"
+          className="orq-create-task__form-components__input"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Informe a tarefa"
+        />
+        <label className="orq-create-task__form-components__label">Concluída? </label>
+        <input
+          type="checkbox"
+          name="concluded"
+          className="orq-create-task__form-components__checkbox"
+          checked={concluded}
+          onChange={(e) => setConcluded(e.target.checked)}
+        />
 
-      {showError && <span style={{ color: "red" }}>Informe a tarefa</span>}
-
-      <button className="orq-form-create-task__button" type="submit">
-        Adicionar
-      </button>
+        <button className="orq-create-task__button" type="submit">
+          Adicionar
+        </button>
+      </div>
+      <div className="orq-create-task__span">
+        {showError && <span style={{ color: "red" }}>Informe a tarefa</span>}
+      </div>
     </form>
   );
 };
