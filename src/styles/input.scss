@@ -1,0 +1,134 @@
+$background-color: #f8f9fa;
+$font-color: #212529;
+$primary-color: #007bff;
+$primary-text-color: #ffffff;
+$concluded-text-color: #6c757d;
+$danger-color: #dc3545;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+  color: $font-color;
+}
+
+.orq-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  margin-top: 1rem;
+
+  &__components{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+}
+
+.orq-header {
+
+  &__title {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+}
+
+.orq-form-create-task {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: center;
+
+  &__label {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    border: 1px solid $font-color;
+    border-radius: 4px;
+    width: 300px;
+    margin-right: 0.5rem;
+    width: 100%;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    background-color: $primary-color;
+    color: $primary-text-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.orq-search-form {
+  width: 100%;
+
+  &__label {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    border: 1px solid $font-color;
+    border-radius: 4px;
+    width: 300px;
+    margin-right: 0.5rem;
+  }
+}
+
+
+.orq-list-task{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+
+  &__header {
+    background-color: $primary-color;
+    color: $primary-text-color;
+  }
+  &__header__row__cell {
+    padding: 0.5rem;
+    text-align: left;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--concluded {
+      text-decoration: line-through;
+      color: $concluded-text-color;
+    }
+  }
+  .orq-list-task__body {
+    tr {
+      text-align: left;
+    }
+  }
+  &-concluded {
+    text-decoration: line-through;
+    color: $concluded-text-color;
+  }
+}

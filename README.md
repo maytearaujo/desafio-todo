@@ -1,61 +1,53 @@
+# Projeto de Lista de Tarefas (To-Do List)
 
-## Objetivo
-Construir um TODO List baseado nos aprendizados do curso
+Este é um projeto de uma aplicação de lista de tarefas (To-Do) construído com React, TypeScript e Vite. Ele permite adicionar, remover, buscar e marcar tarefas como concluídas, com todas as informações salvas no `localStorage` do navegador.
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+---
 
+## Pré-requisitos
 
-## Regras de negócio
-•	Listagem de tarefas
-•	Busca de tarefa
-•	Adicionar tarefa
-•	Remover tarefa
-•	Alterar tarefa para concluído (alterar cor da fonte)
+- **Node.js**: Versão `18.18.0` ou superior.
+- **Gerenciador de Pacotes**: `npm`, mas também é possível utilizar `yarn` ou `pnpm` se preferir.
 
+---
 
-## Referências
-•	Json de referencia para consumo
+## Instalação e Execução
 
-const data = [
-    {
-        "id": 1,
-        "title": "Fazer almoço",
-        "concluded": false
-    },
-    {
-        "id": 2,
-        "title": "Estudar",
-        "concluded": false
-    },
-    {
-        "id": 3,
-        "title": "Lavar louça",
-        "concluded": false
-    }
-]
+Siga os passos abaixo para configurar e rodar o projeto em seu ambiente local.
 
+### 1. Clonar o Repositório
 
+Primeiro, clone este repositório para a sua máquina local usando o comando:
 
-## Observações
+```bash
+git clone https://github.com/maytearaujo/desafio-todo.git
+cd desafio-todo
+```
 
-1. Design de livre escolha.
+### 2. Instalar as Dependências
 
+Execute o comando abaixo para instalar todas as dependências necessárias para o projeto:
 
-## Requisitos Técnicos para a entrega do teste
+```bash
+npm install
+```
 
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
+### 3. Rodar em Ambiente de Desenvolvimento
 
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
+Para iniciar o servidor de desenvolvimento e visualizar a aplicação em tempo, execute:
 
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
+```bash
+npm run dev
+```
 
-## Diferenciais técnicos
+Abra seu navegador e acesse `http://localhost:5173` (ou a porta indicada no seu terminal).
 
-•	Utilização de typescript
+### 4. Gerar a Build de Produção
 
-Boa sorte!
+Para gerar a build otimizada para produção execute o seguinte comando:
+
+```bash
+npm run build
+```
+
+Os arquivos prontos para o deploy estarão localizados na pasta `dist`.
