@@ -4,9 +4,10 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import type IOrqTask from "../models/interfaces";
 import type { TOrqTodoContext } from "../models/interfaces";
 import { TodoContext } from "../contexts/TodoContext";
+import initialTasks from "../../data/data.json";
 
 const TodoProvider = ({ children }: { children: ReactNode }) => {
-  const [tasks, setTasks] = useLocalStorage<IOrqTask[]>(LOCAL_STORAGE_KEY, []);
+  const [tasks, setTasks] = useLocalStorage<IOrqTask[]>(LOCAL_STORAGE_KEY, initialTasks.data);
   const [search, setSearch] = useState<string>("");
 
   const createTask = (title: string, concluded: boolean) => {

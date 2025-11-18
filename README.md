@@ -1,6 +1,16 @@
 # Projeto de Lista de Tarefas (To-Do List)
 
-Este é um projeto de uma aplicação de lista de tarefas (To-Do) construído com React, TypeScript e Vite. Ele permite adicionar, remover, buscar e marcar tarefas como concluídas, com todas as informações salvas no `localStorage` do navegador.
+Este é um projeto de uma aplicação de lista de tarefas (To-Do) que permite adicionar, remover, buscar e marcar tarefas como concluídas.
+
+---
+
+## Tecnologias Utilizadas
+
+- React
+- TypeScript
+- Sass utilizando do padrão BEM (Block Element Modifier)
+- Contexto (useContext)
+- LocalStorage
 
 ---
 
