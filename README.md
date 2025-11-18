@@ -1,6 +1,6 @@
 # Projeto de Lista de Tarefas (To-Do List)
 
-Este é um projeto de uma aplicação de lista de tarefas (To-Do) que permite adicionar, remover, buscar e marcar tarefas como concluídas.
+Este é um projeto de uma aplicação de lista de tarefas (To-Do-List) que permite adicionar, remover, buscar e marcar tarefas como concluídas.
 
 ---
 
