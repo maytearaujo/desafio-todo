@@ -4,6 +4,12 @@ Este é um projeto de uma aplicação de lista de tarefas (To-Do) que permite ad
 
 ---
 
+## Deploy
+
+**[https://desafio-todo-ten.vercel.app/](https://desafio-todo-ten.vercel.app/)**
+
+---
+
 ## Tecnologias Utilizadas
 
 - React
